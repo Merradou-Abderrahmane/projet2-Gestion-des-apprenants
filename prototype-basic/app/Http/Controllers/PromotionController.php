@@ -24,17 +24,8 @@ class PromotionController extends Controller
         $promotion = new Promotion();
         $promotion->promotionName = $request->promotionName;
         $promotion->save();
-        return redirect()->route('index');
+        // return redirect('/');
+        return redirect('index');
     }
 
-    // public function store(Request $request){
-
-    //     $promotion = new Promotion();
-    //     $promotion->Name_promotion = $request->Name ;
-    //     $promotion->save();
-    //     if( $promotion->save()){
-    //     return redirect('index')->with("status","data has ben add");
-    //     }
-    
-    // }
 }
