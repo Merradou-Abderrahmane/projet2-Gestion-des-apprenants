@@ -19,3 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('index', [PromotionController::class, 'index']);
+
+Route::get('create', [PromotionController::class, 'create']);
+Route::post('add', [PromotionController::class, 'store']);
+
