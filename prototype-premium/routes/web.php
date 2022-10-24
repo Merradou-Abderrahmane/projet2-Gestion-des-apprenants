@@ -30,4 +30,4 @@ Route::post('update/{id}',[PromotionController::class,'update']);
 
 Route::get('delete/{id}',[PromotionController::class,'destroy']);
 
-
+Route::get('search',[PromotionController::class,'search']);

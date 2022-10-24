@@ -9,6 +9,9 @@
     <title>Table to show data</title>
 </head>
 <body>
+    <div>
+        <input type="text" placeholder="Search" id="search-input">
+    </div>
     <table>
         <thead>
             <tr>
@@ -16,7 +19,7 @@
                 <th>PromotionName</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id="results">
             @foreach ($promotions as $promotion)
                 <tr>
                     <td>{{$promotion->id}}</td>
@@ -29,5 +32,7 @@
             @endforeach
         </tbody>
     </table>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
 </body>
 </html>

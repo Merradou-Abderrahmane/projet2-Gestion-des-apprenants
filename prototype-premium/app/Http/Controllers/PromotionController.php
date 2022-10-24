@@ -50,4 +50,29 @@ class PromotionController extends Controller
         $promotion->delete();
         return redirect('index');
     }
+
+    public function search(Request $request)
+    {
+    if($request->ajax()){
+        $input = $request->key;
+    $output="";
+    $promotion=Promotion::where('promotionName','like','%'.$input."%")
+        ->orWhere('id','like','%'.$input."%")
+    ->get();
+    if($promotion)
+    {
+    foreach ($promotion as $promotion) {
+    $output.='<tr>
+    <td>'.$promotion->id.'</td>
+    <td>'.$promotion->promotionName.'</td>
+    <td>
+    <a href="editPromotion/'.$promotion->id.'"><button>Edit</button></a>
+    <a href="deletePromotion/'.$promotion->promotionName.'"><button>Delete</button></a>
+    <td>
+    </tr>';
+    }
+    return Response($output);
+       }
+       }
+    }
 }
