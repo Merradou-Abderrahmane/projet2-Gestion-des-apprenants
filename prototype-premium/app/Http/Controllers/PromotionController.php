@@ -4,13 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Promotion;
+use Illuminate\Pagination\paginator;
 
 class PromotionController extends Controller
 {
     //
     public function index()
     {
+        // $promotions = Promotion::latest()->paginate(10);
         $promotions = Promotion::all();
+
         return view('index', ['promotions' => $promotions]);
     }
 
@@ -59,7 +62,7 @@ class PromotionController extends Controller
     $promotion=Promotion::where('promotionName','like','%'.$input."%")
         ->orWhere('id','like','%'.$input."%")
     ->get();
-    if($promotion)
+    // if($promotion)
     {
     foreach ($promotion as $promotion) {
     $output.='<tr>
