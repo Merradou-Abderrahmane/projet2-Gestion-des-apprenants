@@ -69,8 +69,8 @@ class PromotionController extends Controller
     <td>'.$promotion->id.'</td>
     <td>'.$promotion->promotionName.'</td>
     <td>
-    <a href="editPromotion/'.$promotion->id.'"><button>Edit</button></a>
-    <a href="deletePromotion/'.$promotion->promotionName.'"><button>Delete</button></a>
+    <a href={{"delete/".$promotion->id}}>Delete</a>
+    <a href={{"edit/".$promotion->id}}>Edit</a>
     <td>
     </tr>';
     }
