@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PromotionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('index',[PromotionController::class,'index']);
+
+Route::get('add',[PromotionController::class,'create']);
+Route::post('add',[PromotionController::class,'store']);
+
+Route::get('edit/{id}',[PromotionController::class,'edit']);
+Route::post('update/{id}',[PromotionController::class,'update']);
+
+// Route::resource('update/{id}',[PromotionController::class,'update']);
+
+Route::get('delete/{id}',[PromotionController::class,'destroy']);
+
+
