@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <form action="/add" method="POST">
+    <form action="add" method="POST">
         @csrf
         promotion Name : <input type="text" name="promotionName"><br>
         <button type="submit">add</button>

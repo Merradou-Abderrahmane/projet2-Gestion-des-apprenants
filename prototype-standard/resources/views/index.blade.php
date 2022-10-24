@@ -21,6 +21,10 @@
                 <tr>
                     <td>{{$promotion->id}}</td>
                     <td>{{$promotion->promotionName}}</td>
+                    <td>
+                        <a href={{"delete/".$promotion['id']}}>Delete</a>
+                        <a href={{"edit/".$promotion['id']}}>Edit</a>
+                    </td>
                 </tr>
             @endforeach
         </tbody>

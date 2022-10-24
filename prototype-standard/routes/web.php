@@ -19,5 +19,15 @@ Route::get('/', function () {
 });
 
 Route::get('index',[PromotionController::class,'index']);
-Route::get('create',[PromotionController::class,'create']);
+
+Route::get('add',[PromotionController::class,'create']);
 Route::post('add',[PromotionController::class,'store']);
+
+Route::get('edit/{id}',[PromotionController::class,'edit']);
+Route::post('update/{id}',[PromotionController::class,'update']);
+
+// Route::resource('update/{id}',[PromotionController::class,'update']);
+
+Route::get('delete/{id}',[PromotionController::class,'destroy']);
+
+
