@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PromotionController;
+use App\Http\Controllers\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,3 +32,6 @@ Route::post('update/{id}',[PromotionController::class,'update']);
 Route::get('delete/{id}',[PromotionController::class,'destroy']);
 
 Route::get('search',[PromotionController::class,'search']);
+
+// Student routes
+Route::get('/students',[StudentController::class,'index']);
