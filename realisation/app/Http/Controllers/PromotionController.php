@@ -14,12 +14,12 @@ class PromotionController extends Controller
         // $promotions = Promotion::latest()->paginate(10);
         $promotions = Promotion::all();
 
-        return view('index', ['promotions' => $promotions]);
+        return view('promotion.index', ['promotions' => $promotions]);
     }
 
     public function create()
     {
-        return view('addPromotion');
+        return view('promotion.addPromotion');
     }
 
     public function store(Request $request)
@@ -35,10 +35,10 @@ class PromotionController extends Controller
     {
         $promotion = Promotion::find($id);
 
-        dd($promotion->students);
+        // dd($promotion->students);
         // return Promotion::find($id);
                                      #compact('promotion')
-        return view('editPromotion', ['promotion' => $promotion] );
+        return view('promotion.editPromotion', ['promotion' => $promotion] );
     }
 
     public function update(Request $request, $id)
