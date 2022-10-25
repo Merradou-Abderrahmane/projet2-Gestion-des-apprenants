@@ -34,6 +34,8 @@ class PromotionController extends Controller
     public function edit($id)
     {
         $promotion = Promotion::find($id);
+
+        dd($promotion->students);
         // return Promotion::find($id);
                                      #compact('promotion')
         return view('editPromotion', ['promotion' => $promotion] );
@@ -77,5 +79,11 @@ class PromotionController extends Controller
     return Response($output);
        }
        }
+    }
+
+    public function showStudents($id)
+    {
+        $promotion = Promotion::find($id);
+        return view('showStudents', ['promotion' => $promotion]);
     }
 }
