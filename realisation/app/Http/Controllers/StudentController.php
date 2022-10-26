@@ -32,7 +32,7 @@ class StudentController extends Controller
 
         ]);
         $student->save();
-        return redirect('/edit/' . $request->id);
+        return redirect('/edit' . "/" . $request->id);
     }
 
     public function edit($id)
