@@ -11,18 +11,20 @@
         @csrf
         {{-- @method('PUT') --}}
         {{-- <input type="hidden" name="id" value="{{$promotion->id}}"> --}}
-        promotion Name :<input type="text" name="promotionName" value="{{$promotion->promotionName}}">
-        <button type="submit">Update</button>
+        Nom de la promotion : <input type="text" name="promotionName" value="{{$promotion->promotionName}}">
+        <button type="submit">Update</button> <br> <br>
         {{-- Student --}}
+            <a href={{url("student/addStudent/")."/".$promotion->id}} >Ajouter Apprenant</a>
+            {{-- <button type="button"  class="btn btn-info add-new"><i class="fa fa-plus"></i> Ajouter apprenant</button> --}}
         @foreach ($students as $student)
         <tr>
             {{-- <td>{{$student->id}}</td> --}}
-            <td>{{$student->firstName}}</td>
+            {{-- <td>{{$student->firstName}}</td> --}}
             <td>{{$student->lastName}}</td>
-            <td>{{$student->email}}</td>
+            {{-- <td>{{$student->email}}</td> --}}
             <td>
-                {{-- <a href={{"delete/".$promotion['id']}}>Delete</a>
-                <a href={{"edit/".$promotion['id']}}>Edit</a> --}}
+                <a href={{"student.delete/".$student['id']}}>Delete</a>
+                <a href={{"student.edit/".$student['id']}}>Edit</a> <br> <br>
             </td>
         </tr>
     @endforeach

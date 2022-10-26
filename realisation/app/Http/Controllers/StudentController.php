@@ -8,34 +8,31 @@ use App\Models\Student;
 class StudentController extends Controller
 {
     //
-    public function index()
+    // public function index()
+    // {
+    //     $students = Student::all();
+
+    //     return view('student.index', ['students' => $students]);
+
+    // }
+
+    public function create($id)
     {
-        $students = Student::all();
-
-        return view('student.index', ['students' => $students]);
-
-    }
-
-    public function create()
-    {
-        return view('student.addStudent');
+        return view('student.addStudent', ['id' => $id]);
     }
 
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required',
-            'phone' => 'required',
-        ]);
-
+        
         $student = new Student([
-            'name' => $request->get('name'),
-            'email' => $request->get('email'),
-            'phone' => $request->get('phone'),
+            'firstName' => $request->input('first_name'),
+            'lastName' => $request->input('last_name'),
+            'email' => $request->input('email'),
+            'promotionId' => $request->input('id')
+
         ]);
         $student->save();
-        return redirect('/students')->with('success', 'Student has been added');
+        return redirect('/edit/' . $request->id);
     }
 
     public function edit($id)

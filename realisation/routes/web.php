@@ -34,4 +34,6 @@ Route::get('delete/{id}',[PromotionController::class,'destroy']);
 Route::get('search',[PromotionController::class,'search']);
 
 // Student routes
-Route::get('/students',[StudentController::class,'index']);
+// Route::get('/students',[StudentController::class,'index']);
+Route::get('student/addStudent/{id}',[StudentController::class,'create']);
+Route::post('student/add',[StudentController::class,'store']);
