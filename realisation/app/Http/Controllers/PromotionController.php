@@ -34,11 +34,12 @@ class PromotionController extends Controller
     public function edit($id)
     {
         $promotion = Promotion::find($id);
+        $students = $promotion->students;
 
         // dd($promotion->students);
         // return Promotion::find($id);
                                      #compact('promotion')
-        return view('promotion.editPromotion', ['promotion' => $promotion] );
+        return view('promotion.editPromotion', ['promotion' => $promotion, 'students' => $students]);
     }
 
     public function update(Request $request, $id)
