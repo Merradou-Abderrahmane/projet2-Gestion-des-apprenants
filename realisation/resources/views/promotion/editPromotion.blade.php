@@ -23,8 +23,8 @@
             <td>{{$student->lastName}}</td>
             {{-- <td>{{$student->email}}</td> --}}
             <td>
-                <a href={{"student.delete/".$student['id']}}>Delete</a>
-                <a href={{"student.edit/".$student['id']}}>Edit</a> <br> <br>
+                <a href={{"/student/ /".$student['id']}}>Delete</a>
+                <a href={{"/student/edit/".$student['id']}}>Edit</a> <br> <br>
             </td>
         </tr>
     @endforeach

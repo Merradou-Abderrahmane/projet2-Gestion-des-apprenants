@@ -38,33 +38,32 @@ class StudentController extends Controller
     public function edit($id)
     {
         $student = Student::find($id);
-        return view('student.edit', compact('student'));
+        return view('student.editStudent', ['student' => $student]);
     }
 
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required',
-            'phone' => 'required',
-        ]);
-
+        // $request->validate([
+        //     'name' => 'required',
+        //     'email' => 'required',
+        //     'phone' => 'required',
+        // ]);
         $student = Student::find($id);
-        $student->name = $request->get('name');
+        $student->firstName = $request->get('first_name');
+        $student->lastName = $request->get('last_name');
         $student->email = $request->get('email');
-        $student->phone = $request->get('phone');
+        
         $student->save();
 
-        return redirect('/students')->with('success', 'Student has been updated');
+        return redirect('/edit' . "/" . $student->promotionId);
     }
 
     public function destroy($id)
     {
         $student = Student::find($id);
         $student->delete();
-
-        return redirect('/students')->with('success', 'Student has been deleted Successfully');
+        // redirect back to the same page
+        return redirect()->back();
     }
-
 
 }
