@@ -42,3 +42,5 @@ Route::get('student/edit/{id}',[StudentController::class,'edit']);
 Route::post('student/update/{id}',[StudentController::class,'update']);
 
 Route::get('student/delete/{id}',[StudentController::class,'destroy']);
+
+Route::get('student/search',[StudentController::class,'search']);

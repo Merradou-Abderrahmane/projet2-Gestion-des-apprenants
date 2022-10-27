@@ -66,4 +66,28 @@ class StudentController extends Controller
         return redirect()->back();
     }
 
+    public function search(Request $request)
+    {
+    if($request->ajax()){
+        $input = $request->key;
+    $output="";
+    $student=Student::where('firstName','like','%'.$input."%")
+        // ->orWhere('lastName','like','%'.$input."%")
+        // ->orWhere('email','like','%'.$input."%")
+    ->get();
+    // if($promotion)
+    {
+    foreach ($student as $student) {
+    $output.='<tr>
+    <td>'.$student->id.'</td>
+    <td>'.$student->firstName.'</td>
+    <td>'.$student->lastName.'</td>
+    <td>'.$student->email.'</td>
+    </tr>';
+    }
+    return Response($output);
+       }
+       }
+    }
+
 }

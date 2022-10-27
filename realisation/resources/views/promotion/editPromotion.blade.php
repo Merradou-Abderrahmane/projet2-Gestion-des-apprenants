@@ -7,6 +7,12 @@
     <title>Edit Promotions</title>
 </head>
 <body>
+    <div>
+        <input type="text" placeholder="Search" id="search-input">
+        <div id="results">
+
+        </div>
+    </div>
     <form action="/update/{{ $promotion->id }}" method="POST">
         @csrf
         {{-- @method('PUT') --}}
@@ -30,5 +36,6 @@
     @endforeach
 
     </form>
-</body>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="{{ asset('js/student.js') }}"></script></body>
 </html>
