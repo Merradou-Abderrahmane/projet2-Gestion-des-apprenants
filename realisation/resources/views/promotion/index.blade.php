@@ -50,7 +50,6 @@ $(document).ready(function(){
                         </td>
                     </tr>
                     @endforeach
-
                 </tbody>
             </table>
             <div class="clearfix">
