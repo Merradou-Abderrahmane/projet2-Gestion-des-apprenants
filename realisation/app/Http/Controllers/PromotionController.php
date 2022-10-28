@@ -69,10 +69,9 @@ class PromotionController extends Controller
     {
     foreach ($promotion as $promotion) {
     $output.='<tr>
-    <td>'.$promotion->id.'</td>
     <td>'.$promotion->promotionName.'</td>
     <td>
-    <a href="edit/'.$promotion->id.'">Edit</a>
+    <a href="edit/'.$promotion->id.'" >Edit</a>
     <a href="delete/'.$promotion->id.'">Delete</a>
     <td>
     </tr>';

@@ -44,3 +44,9 @@ Route::post('student/update/{id}',[StudentController::class,'update']);
 Route::get('student/delete/{id}',[StudentController::class,'destroy']);
 
 Route::get('student/search',[StudentController::class,'search']);
+
+// view for test blade php in promotion folder
+
+Route::get('/test', function () {
+    return view('/promotion.test');
+});

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('firstName');
             $table->string('lastName');
             $table->string('email');
-            $table->foreignId('promotionId')->constrained('promotions');
+            $table->foreignId('promotionId')->constrained('promotions')->onDelete('cascade');
             $table->timestamps();
 
         });
