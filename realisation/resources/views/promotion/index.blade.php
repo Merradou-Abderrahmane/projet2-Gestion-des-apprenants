@@ -19,6 +19,8 @@ $(document).ready(function(){
 </script> --}}
 </head>
 <body>
+    <h1 id="add-title">👨🏻‍🎓 Gestion des apprenants</h1>
+
 <div class="container-xl">
     <div class="table-responsive">
         <div class="table-wrapper">

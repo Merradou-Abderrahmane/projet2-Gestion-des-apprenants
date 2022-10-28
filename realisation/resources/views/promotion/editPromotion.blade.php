@@ -14,7 +14,7 @@
     <form  action="/update/{{ $promotion->id }}" method="POST">
         @csrf
         <label for="promotionName"> Nom de promotion</label> <input type="text" class="add-box" name="promotionName" value="{{$promotion->promotionName}}"><br>
-        <button id="button-add" type="submit">update</button>
+        <button id="button-add" type="submit">Editer</button>
     </form>
 <div class="container-xl">
     <div class="table-responsive">

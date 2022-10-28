@@ -12,11 +12,11 @@
     <title>Add Promotion</title>
 </head>
 <body>
-    <h1 id="add-title">Ajouter Promotion</h1>
+    <h1 id="add-title">➕ Ajouter Promotion</h1>
     <form  action="add" method="POST">
         @csrf
         <label for="promotionName"> Nom de promotion</label> <input type="text" class="add-box" name="promotionName"><br>
-        <button id="button-add" type="submit">add</button>
+        <button id="button-add" type="submit">Ajouter</button>
     </form>
 </body>
 </html>
