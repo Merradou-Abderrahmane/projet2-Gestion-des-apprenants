@@ -79,10 +79,11 @@ class StudentController extends Controller
     {
     foreach ($student as $student) {
     $output.='<tr>
-    <td>'.$student->id.'</td>
     <td>'.$student->firstName.'</td>
-    <td>'.$student->lastName.'</td>
-    <td>'.$student->email.'</td>
+    <td>
+    <a href="/student/edit/'.$student->id.'" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+    <a href="/student/delete/'.$student->id.'" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+    <td>
     </tr>';
     }
     return Response($output);

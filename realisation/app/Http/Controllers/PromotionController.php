@@ -71,8 +71,8 @@ class PromotionController extends Controller
     $output.='<tr>
     <td>'.$promotion->promotionName.'</td>
     <td>
-    <a href="edit/'.$promotion->id.'" >Edit</a>
-    <a href="delete/'.$promotion->id.'">Delete</a>
+    <a href="edit/'.$promotion->id.'" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+    <a href="delete/'.$promotion->id.'"class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
     <td>
     </tr>';
     }
