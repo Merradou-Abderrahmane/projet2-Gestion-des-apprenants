@@ -20,7 +20,7 @@
              <input type="text" placeholder="First Name" name="first_name"><br> <br>
              <input type="text" placeholder="Last Name" name="last_name"><br> <br> 
              <input type="text" placeholder="Email" name="email"><br> <br>
-             <input type="hidden" value="{{$id}}"  name="id">
+             {{-- <input type="hidden" value="{{$id}}"  name="id"> --}}
             <button type="submit">add</button>
           </form>
         </div>
